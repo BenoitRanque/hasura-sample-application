@@ -1,0 +1,3 @@
+table:
+  name: account_currency_history
+  schema: public

@@ -1,0 +1,3 @@
+table:
+  name: exchange_rate_history
+  schema: public

@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "utilities for server",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^4.0.0",
+    "hasura-cli": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hasura": "dotenv -e ../.env cross-var hasura -- --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET",
+    "hasura:console": "dotenv -e ../.env cross-var hasura -- --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET console",
+    "hasura:default": "dotenv -e ../.env cross-var hasura -- --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET --database-name default"
+  },
+  "author": "",
+  "license": "ISC"
+}

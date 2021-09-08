@@ -1,0 +1,39 @@
+type Query {
+  auth : Auth!
+}
+
+type Mutation {
+  auth_login (
+    username: String!
+    password: String!
+  ): AuthLogin!
+}
+
+type Mutation {
+  auth_logout : AuthLogout!
+}
+
+type AuthLogin {
+  token : String!
+  user_id : Int!
+  session_id : Int!
+  username : String!
+  display_name : String!
+  roles : [String!]!
+}
+
+type AuthLogout {
+  user_id : Int!
+  username : String!
+  display_name : String!
+  roles : [String!]!
+}
+
+type Auth {
+  user_id : Int!
+  session_id : Int!
+  username : String!
+  display_name : String!
+  roles : [String!]!
+}
+

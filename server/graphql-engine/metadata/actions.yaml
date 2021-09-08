@@ -1,0 +1,54 @@
+actions:
+- name: auth
+  definition:
+    kind: ""
+    handler: http://business-logic:3000/hasura/action/query/auth
+  permissions:
+  - role: anonymous
+  - role: authenticated
+- name: auth_login
+  definition:
+    kind: synchronous
+    handler: http://business-logic:3000/hasura/action/mutation/auth/login
+  permissions:
+  - role: anonymous
+- name: auth_logout
+  definition:
+    kind: synchronous
+    handler: http://business-logic:3000/hasura/action/mutation/auth/logout
+  permissions:
+  - role: authenticated
+custom_types:
+  enums: []
+  input_objects: []
+  objects:
+  - name: AuthLogin
+  - name: AuthLogout
+    relationships:
+    - remote_table:
+        schema: public
+        name: user
+      name: user
+      source: default
+      type: object
+      field_mapping:
+        user_id: id
+  - name: Auth
+    relationships:
+    - remote_table:
+        schema: public
+        name: user
+      name: user
+      source: default
+      type: object
+      field_mapping:
+        user_id: id
+    - remote_table:
+        schema: public
+        name: session
+      name: session
+      source: default
+      type: object
+      field_mapping:
+        session_id: id
+  scalars: []

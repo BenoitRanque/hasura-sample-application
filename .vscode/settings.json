@@ -1,0 +1,9 @@
+{
+  "graphql-config.load.rootDir": "client",
+  "graphql-config.dotEnvPath": "client/.env",
+  "eslint.workingDirectories": [
+    "./client"
+  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+}

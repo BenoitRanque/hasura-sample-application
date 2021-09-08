@@ -1,0 +1,3 @@
+table:
+  name: title_account_history
+  schema: public

@@ -1,0 +1,25 @@
+table:
+  name: session
+  schema: public
+object_relationships:
+- name: created_by_user
+  using:
+    foreign_key_constraint_on: created_by_user_id
+- name: deleted_by_user
+  using:
+    foreign_key_constraint_on: deleted_by_user_id
+- name: updated_by_user
+  using:
+    foreign_key_constraint_on: updated_by_user_id
+- name: user
+  using:
+    foreign_key_constraint_on: user_id
+select_permissions:
+- permission:
+    columns:
+    - id
+    - user_id
+    filter:
+      id:
+        _eq: x-hasura-session-id
+  role: authenticated

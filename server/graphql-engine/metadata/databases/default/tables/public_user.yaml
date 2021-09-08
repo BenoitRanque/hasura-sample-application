@@ -1,0 +1,42 @@
+table:
+  name: user
+  schema: public
+object_relationships:
+- name: created_by_user
+  using:
+    foreign_key_constraint_on: created_by_user_id
+- name: deleted_by_user
+  using:
+    foreign_key_constraint_on: deleted_by_user_id
+- name: updated_by_user
+  using:
+    foreign_key_constraint_on: updated_by_user_id
+array_relationships:
+- name: user_roles
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: user_role
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - display_name
+    - id
+    - username
+    filter:
+      id:
+        _eq: x-hasura-user-id
+  role: authenticated
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - display_name
+    - password
+    - username
+    filter:
+      id:
+        _eq: x-hasura-user-id
+  role: authenticated

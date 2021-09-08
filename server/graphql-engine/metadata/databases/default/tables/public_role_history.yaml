@@ -1,0 +1,3 @@
+table:
+  name: role_history
+  schema: public

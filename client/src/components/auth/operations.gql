@@ -1,0 +1,27 @@
+mutation AuthLogin($username: String!, $password: String!) {
+  auth: auth_login(username: $username, password: $password) {
+    token
+    session_id
+    user_id
+    username
+    display_name
+    roles
+  }
+}
+
+mutation AuthLogout {
+  auth: auth_logout {
+    user_id
+    username
+    display_name
+    roles
+  }
+}
+
+query AuthState {
+  auth {
+    session_id
+    display_name
+    roles
+  }
+}
