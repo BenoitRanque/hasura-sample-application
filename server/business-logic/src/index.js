@@ -3,6 +3,7 @@ import action from './action/index.js';
 import auth from './auth/index.js';
 import event from './event/index.js';
 import graphql from './graphql/index.js';
+import proxy from './proxy/index.js';
 
 const PORT = process.env.PORT ?? 4000;
 
@@ -12,5 +13,6 @@ app.use('/action', action);
 app.use('/auth', auth);
 app.use('/event', event);
 app.use('/graphql', graphql);
+app.use('/proxy', proxy);
 
 app.listen(PORT);

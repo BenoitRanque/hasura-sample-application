@@ -1,0 +1,8 @@
+- name: cms
+  definition:
+    url: http://business-logic:4000/proxy
+    timeout_seconds: 60
+    headers:
+    - value: Bearer a1dc4e1cb15bf0d7fae4a41ef14209fabf9e8580b0c5f600
+      name: Authorization
+  comment: ""

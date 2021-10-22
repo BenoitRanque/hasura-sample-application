@@ -1,8 +1,7 @@
-## ERP - Entreprise Resource Planning
+## Hasura Sample Application
 
-This application may eventually become a full fledged ERP.
-For now, it's a simple accounting application
-Check the server directory for instructions on how to setup the server
-Check the client directory for instructions on how to setup the client
+My personal testing application for hasura.
+I aim to cover as much of the api as possible, to facilitate testing
 
-TODO: add more instructions here
+To setup the server, view server/readme.md
+To setup the client, view client/readme.md

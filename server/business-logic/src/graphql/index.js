@@ -7,15 +7,17 @@ const router = Router();
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(/* GraphQL */ `
   type Query {
-    hello: String
+    cms: CMSInfo
+  }
+
+  type CMSInfo {
+    version: String
   }
 `);
 
 // The root provides a resolver function for each API endpoint
 var root = {
-  hello: () => {
-    return 'Hello world!';
-  },
+  cms: () => null,
 };
 
 router.use(
@@ -23,6 +25,7 @@ router.use(
     schema: schema,
     rootValue: root,
     graphiql: true,
+    // extensions: () => ({}),
   })
 );
 

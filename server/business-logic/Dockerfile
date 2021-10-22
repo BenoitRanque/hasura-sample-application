@@ -1,4 +1,4 @@
-FROM node:14-slim
+FROM node:16-slim
 
 # Create app directory
 WORKDIR /usr/app
@@ -12,7 +12,7 @@ USER node
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY package*.json ./
+COPY package.json ./
 
 # build time argument to add tools for development
 ARG NODE_ENV=production

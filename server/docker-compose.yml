@@ -35,7 +35,6 @@ services:
       - "business-logic"
     restart: always
     environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
       # enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
@@ -52,3 +51,4 @@ services:
           "claims_namespace": "x-hasura",
           "claims_format": "json"
         }
+      PG_DATABASE_URL: postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
