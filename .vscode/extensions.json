@@ -2,7 +2,8 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "johnsoncodehk.volar"
+    "johnsoncodehk.volar",
+    "graphql.vscode-graphql"
   ],
   "unwantedRecommendations": [
     "hookyqr.beautify",
